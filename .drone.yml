@@ -6,4 +6,4 @@ pipeline:
 
   publish:
     image: plugins/docker
-    repo: 3r1.co/gowebapp
+    repo: r.3r1.co/gowebapp
