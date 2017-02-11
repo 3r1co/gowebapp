@@ -3,3 +3,7 @@ pipeline:
     image: golang
     commands:
       - go build -o main
+
+  publish:
+    image: plugins/docker
+    repo: 3r1.co/gowebapp
