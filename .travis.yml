@@ -2,8 +2,10 @@ language: go
 sudo: required
 services:
 - docker
+
 addons:
-  ssh_known_hosts: 46.38.251.201
+  ssh_known_hosts: $DEPLOYMENT_TARGET
+
 env:
 - DOCKER_IMAGE_NAME="r.3r1.co/honratha/gowebapp:$TRAVIS_BUILD_NUMBER"
 
@@ -22,4 +24,5 @@ before_deploy:
 
 deploy:
 - provider: script
-  script: ssh root@46.38.251.201 'docker pull $DOCKER_IMAGE_NAME && docker service update --image $DOCKER_IMAGE_NAME passwordservice'
+  script: ssh root@$DEPLOYMENT_TARGET 'docker pull $DOCKER_IMAGE_NAME && docker service update --image $DOCKER_IMAGE_NAME passwordservice'
+
