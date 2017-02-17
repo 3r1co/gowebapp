@@ -24,5 +24,5 @@ before_deploy:
 
 deploy:
 - provider: script
-  script: ssh root@$DEPLOYMENT_TARGET 'docker pull $DOCKER_IMAGE_NAME && docker service update --image $DOCKER_IMAGE_NAME passwordservice'
+  script: ssh deployer@$DEPLOYMENT_TARGET 'docker pull $DOCKER_IMAGE_NAME && docker service update --image $DOCKER_IMAGE_NAME passwordservice'
 
