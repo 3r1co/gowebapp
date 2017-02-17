@@ -4,7 +4,7 @@ services:
 - docker
 
 addons:
-  ssh_known_hosts: $DEPLOYMENT_TARGET
+  ssh_known_hosts: 46.38.251.201 
 
 env:
 - DOCKER_IMAGE_NAME="r.3r1.co/honratha/gowebapp:$TRAVIS_BUILD_NUMBER"
